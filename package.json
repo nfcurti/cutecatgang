@@ -9,14 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@metamask/detect-provider": "^1.2.0",
     "@strv/react-sliders": "^1.0.2",
+    "@walletconnect/web3-provider": "^1.6.5",
     "next": "11.1.2",
     "rc-slider": "^9.7.2",
     "react": "17.0.2",
     "react-countdown": "^2.3.2",
     "react-dom": "17.0.2",
     "react-slider": "^1.3.1",
-    "react-sliders": "^0.8.2"
+    "react-sliders": "^0.8.2",
+    "web3": "^1.5.2"
   },
   "devDependencies": {
     "eslint": "7.32.0",

@@ -4,12 +4,51 @@ import styles from '../styles/Home.module.css'
 import Countdown from 'react-countdown';
 import Slider, { Range } from 'rc-slider';
 import 'rc-slider/assets/index.css';
-import React, {useRef,  useState } from 'react';
+import { useEffect, useState } from "react";
+import ContractData from '../config/Contract.json';
+const Web3 = require('web3');
+import detectEthereumProvider from '@metamask/detect-provider'
 
 export default function Home() {
+  const _chainIdToCompare = 1; //Ethereum
+  // const _chainIdToCompare = 4; //Rinkeby
   const [traits, setTraits] = useState(0)
+  const [userAddress, setUserAddress] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [mintForAllStartDate, setMintForAllStartDate] = useState(0);
+  const [remainingNFTs, setRemainingNFTs] = useState(0);
+
+  useEffect(async () => {
+    loadIndependentData();
+  }, []);
+
+  const loadIndependentData = async() => {
+    var currentProvider = new Web3.providers.HttpProvider(`https://${_chainIdToCompare == 1 ? 'mainnet' : 'rinkeby'}.infura.io/v3/be634454ce5d4bf5b7f279daf860a825`);
+    const web3 = new Web3(currentProvider);
+    const contract = new web3.eth.Contract(ContractData.abi, ContractData.address);
+
+
+      const mintForAllStartDateX = await contract.methods._mintForAllStartDate().call();
+     
+      setMintForAllStartDate(mintForAllStartDateX);
+
+      const maxSupply = await contract.methods.maxSupply().call();
+      const totalSupply = await contract.methods.totalSupply().call();
+      setRemainingNFTs(maxSupply - totalSupply);
+  }
+
   // Random component
-  const Completionist = () => <button>Mint</button>;
+  const Completionist = () => userAddress == '' ? <button onClick={async () => {
+    connectMetamaskPressed();
+  }} className={styles.lbutton}>Connect first</button> : <>
+
+  {[1, 3, 5, 10, 15, 20].map(n => <button onClick={() => {
+    mint(n);
+  }} className={styles.lbutton}>Mint x{n}</button>)}
+  
+  </>;
+
 
   // Renderer callback with condition
   const renderer = ({ days, hours, minutes, seconds, completed }) => {
@@ -21,6 +60,107 @@ export default function Home() {
       return <p>Time to launch: <br/><button>{days} days {hours} hs<br/> {minutes} min {seconds} sec</button></p>;
     }
   };
+
+  const requestAccountMetamask = async() => {
+    const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+    
+    if(accounts.length > 0) {
+      setUserAddress(accounts[0]);
+
+      const chainId = await ethereum.request({ method: 'eth_chainId' });
+      handleChainChanged(chainId);
+
+      ethereum.on('chainChanged', handleChainChanged);
+
+      function handleChainChanged(_chainId) {
+        if(_chainId != _chainIdToCompare) {
+          window.location.reload();
+        }
+      }
+
+      ethereum.on('accountsChanged', handleAccountsChanged);
+
+      async function handleAccountsChanged(accounts) {
+        if (accounts.length === 0) {
+          setUserAddress('');
+          
+          // loadDataAfterAccountDetected();
+        } else if (accounts[0] !== userAddress) {
+          const chainId = await ethereum.request({ method: 'eth_chainId' });
+          setUserAddress(chainId == _chainIdToCompare ? accounts[0] : 'CONNECT');
+          
+          
+        }
+      }
+    }
+  }
+
+  const connectMetamaskPressed = async () => {
+    try { 
+      await window.ethereum.enable();
+      requestAccountMetamask();
+   } catch(e) {
+      // User has denied account access to DApp...
+   }
+    try {
+      await ethereum.request({
+        method: 'wallet_switchEthereumChain',
+        params: [{ chainId: '0x'+_chainIdToCompare }],
+      });
+      requestAccountMetamask();
+    } catch (error) {
+      
+      // This error code indicates that the chain has not been added to MetaMask.
+      if (error.code === 4902) {
+        try {
+          await ethereum.request({
+            method: 'wallet_addEthereumChain',
+            params: [{ chainId: '0x'+_chainIdToCompare, rpcUrl: 'https://...' /* ... */ }],
+          });
+          requestAccountMetamask();
+        } catch (addError) {
+        }
+      }
+    }
+  }
+
+  const mint = async(mintValue) => {
+    if(userAddress == '') {
+      return alert('User is not connected');
+    }
+    
+    if(mintValue == 0) { return; }
+    setIsLoading(true);
+    const provider = await detectEthereumProvider()
+  
+    if (provider && userAddress!='') {
+      const web3 = new Web3(provider);
+      
+      const contract = new web3.eth.Contract(ContractData.abi, ContractData.address);
+
+      const _priceWei = await contract.methods.getCurrentPrice().call();
+      
+      var block = await web3.eth.getBlock("latest");
+      var gasLimit = block.gasLimit/block.transactions.length;
+      const gasPrice = await contract.methods.mint(
+        mintValue
+      ).estimateGas({from: userAddress, value: (mintValue*_priceWei)});
+
+      await contract.methods.mint(
+        mintValue
+      ).send({
+        from: userAddress,
+        value: (mintValue*_priceWei),
+        gas: gasPrice,
+        gasLimit: gasLimit
+      });
+      alert('Minted successfuly!');
+      setIsLoading(false);
+      window.location.reload();
+    }
+  }
+
+
   return (
     <div className={styles.container}>
       <Head>
@@ -34,7 +174,13 @@ export default function Home() {
           <li><a href='#hero1'>About</a></li>
           <li><a href='#hero3'>Rarity</a></li>
           <li><a href='#hero5'>FAQ</a></li>
-          <li className={styles.connect_nav}><a><img src='./n_12px-MetaMask_Foxsvg.png'/> Connect Wallet</a></li>
+        {
+          userAddress == '' ?
+          <li onClick={async () => {
+            connectMetamaskPressed();
+          }} className={styles.connect_nav}><a><img src='./n_12px-MetaMask_Foxsvg.png'/> Connect Wallet</a></li> :
+          <li className={styles.connect_nav}><a><img src='./n_12px-MetaMask_Foxsvg.png'/> {userAddress.substring(0,8)}</a></li>
+        }
         </ul>
       </nav>
       <main className={styles.main}>
@@ -44,7 +190,7 @@ export default function Home() {
             <div className={styles.hero1dialog}>
               10001 Cats have escaped from Wonderland, and are looking for an adopter to take care of them in the metaverse. <br/><br/>Remember they are still from a gang... be careful.
             </div>
-            <Countdown date={1632064691} renderer={renderer} />
+            <Countdown date={1632150000} renderer={renderer} />
             
           </div>
         </div>
