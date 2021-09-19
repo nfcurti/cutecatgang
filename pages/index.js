@@ -44,7 +44,7 @@ export default function Home() {
             <div className={styles.hero1dialog}>
               10001 Cats have escaped from Wonderland, and are looking for an adopter to take care of them in the metaverse. <br/><br/>Remember they are still from a gang... be careful.
             </div>
-            <Countdown date={1632142800000} renderer={renderer} />
+            <Countdown date={1632064691} renderer={renderer} />
             
           </div>
         </div>
