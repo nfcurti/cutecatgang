@@ -1,11 +1,194 @@
-.container {
-  min-height: 100vh;
-  padding: 0 0.5rem;
+@font-face {
+  font-family: Natwood;
+  src: url('../public/NATWOODDRAWS-REGULAR.TTF');
+}
+@font-face {
+  font-family: Berlin Sans C;
+  src: url('../public/BRLNSB.TTF');
+}
+@font-face {
+  font-family: Berlin Sans B;
+  src: url('../public/BRLNSDB.TTF');
+}
+@font-face {
+  font-family: Berlin Sans A;
+  src: url('../public/BRLNSR.TTF');
+}
+
+.navbar{
+  background: #F4C474;
+  width: 100%;
+  height: 65px;
+  padding: 0.5rem 2rem;
+  position: absolute;
+  top: 0
+}
+
+.navbar img{
+  width: 8%
+}
+
+.connect_nav{
+    width: 30%;
+    text-align: center;
+    background: url('/weeb/Trazado 27.svg');
+    background-size: 100% 100%;
+    line-height: 45px;
+    margin-top: -15px;
+}
+
+.connect_nav img{
+  width: 13%;
+  margin-bottom: -5px
+}
+
+.hero1{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+}
+
+.hero1img{
+  width: 50%
+}
+
+.hero1_dialogbox{
+  padding-top: 5%;
+  display: block
+}
+
+.hero1dialog{
+  width: 80%;
+  background: url('/weeb/Grupo 50.svg');
+  background-size: 100% 100%;
+  color: #694F9A;
+  font-family: Natwood;
+  padding: 15% 15%;
+
+}
+
+.hero1_dialogbox button{
+  color: #694F9A;
+  font-family: Berlin Sans A;
+  font-size: 20px
+}
+
+.hero1_dialogbox p{
+  color: #F4C474;
+  font-family: Berlin Sans A;
+  font-size: 20px;
+  text-align: center;
+  display: block
+}
+
+
+.hero2{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero2 img:nth-of-type(0){
+  width: 20%
+}
+.hero2 img:nth-of-type(1){
+  width: 20%
+}
+.hero2 img:nth-of-type(2){
+  width: 10%;
+  margin-left: 7%
+}
+.hero2 img:nth-of-type(3){
+  width: 37%
+}
+
+.hero3{
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  gap:10px;
+  padding: 
+}
+
+.hero3_item{
+  height: 2em;
+  flex: 1 0 49%;
+  background: #F4C474;
+  border:2px solid #694F9A;
+  color: #694F9A;
+  font-family: Berlin Sans A;
+  padding: 0.3em 1em;
+}
+
+.hero3_item img{
+  width: 1em;
+  float: right;
+  margin-top: 0.3em
+}
+
+.hero3_extend{
+  background: #F4C474;
+  width: 106.6%;
+  margin-left: -3.3%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.3em 1em;
+  position: relative;
+  gap:5px;
+}
+
+.traititem{
+  display: block;
+  width: 5em;
+  text-align: center;
+  padding-top: 2em;
+}
+
+.traititem span:first-of-type{
+  background: #E9A2C7;
+  padding: 1em 0.5em;
+  border-radius: 50%
+
+}
+.traititem span:last-of-type{
+  padding: 1em 0.5em;
+  border-radius: 50%;
+  display: block
+
+}
+.hero4{
+  display: block;
+  padding: 1em;
+  width: 58%;
+  margin-left: -22.5%;
+  color: #F4C474
+}
+
+.hero4 h1{
+  font-family: Berlin Sans A
+}
+.hero4 h3{
+  font-family: Berlin Sans A
+}
+.hero4 p{
+  font-family: Natwood
+}
+
+.hero5 img{
+  background: url('/weeb/Trazado 51.svg');
+  background-size: 100% 100%;
+  padding: 1em;
+  width: 4em;
+  margin-left: 1em
+
+}
+.hero1_dialogbox{width: 80%}
+.hero1_dialogbox button{
+  width: 80%;
+  margin:auto;
+  margin-top:0em;
+  border:none;
+  background: url('/weeb/Trazado 10.svg');
+  background-size: 100% 100%;
+  padding: 1rem 2rem;
 }
 
 .main {
@@ -117,5 +300,53 @@
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+
+  .navul{
+    display: none !important
+  }
+
+  .navbar img{
+        width: 32%;
+
+  }
+
+  .hero1img{
+    display: none
+  }
+
+  .hero1_dialogbox{
+    width: 100%
+  }
+  .hero1_dialogbox button{
+    width: 100%
+  }
+
+  .hero1dialog{
+    width: 100%;
+        font-size: 12px;
+  }
+
+  .hero4{
+    text-align: center;
+    width:auto;
+    margin: 0
+  }
+
+  .hero2{
+    display: block
+  }
+
+  .hero2 img{
+    display: block;
+    width: 50%;
+    margin:auto ;
+    margin-top: 2em;
+  }
+
+  .hero2 img:nth-of-type(2){
+    transform:rotate(90deg);
+    margin-top: 3em;
+    margin-left: auto;
   }
 }
