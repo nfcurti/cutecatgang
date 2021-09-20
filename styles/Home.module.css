@@ -25,7 +25,7 @@
 }
 
 .navbar img{
-  width: 8%
+  width: 7em
 }
 
 .connect_nav{
@@ -42,7 +42,7 @@
 }
 
 .connect_nav img{
-  width: 13%;
+  width: 1.2em;
   margin-bottom: -5px
 }
 
@@ -143,6 +143,15 @@
   gap:5px;
 }
 
+.gallery{
+  display: flex;
+  flex-wrap: wrap
+}
+
+.gallery img{
+  width: 20%
+}
+
 .traititem{
   display: block;
   width: 5em;
@@ -153,13 +162,14 @@
 .traititem span:first-of-type{
   background: #E9A2C7;
   padding: 1em 0.5em;
-  border-radius: 50%
+  border-radius: 50%;
+  display:none;
 
 }
 .traititem span:last-of-type{
   padding: 1em 0.5em;
   border-radius: 50%;
-  display: block
+  display: block;
 
 }
 .hero4{
@@ -167,7 +177,7 @@
   padding: 1em;
   width: 58%;
   margin-left: -22.5%;
-  color: #F4C474
+  color: #F4C474;
 }
 
 .hero4 h1{
@@ -177,14 +187,15 @@
   font-family: Berlin Sans A
 }
 .hero4 p{
-  font-family: Natwood
+  font-family: Natwood;
+  font-size:18px;
 }
 
 .hero5 img{
   background: url('/weeb/Trazado 51.svg');
   background-size: 100% 100%;
   padding: 1em;
-  width: 4em;
+  width: 6em;
   margin-left: 1em
 
 }
@@ -332,7 +343,7 @@
 
   .hero1dialog{
     width: 100%;
-        font-size: 12px;
+        font-size: 14px;
   }
 
   .hero4{
@@ -357,4 +368,6 @@
     margin-top: 3em;
     margin-left: auto;
   }
+
+  .hero1dialog{font-size: 12px !important}
 }

@@ -190,7 +190,7 @@ export default function Home() {
             <div className={styles.hero1dialog}>
               10001 Cats have escaped from Wonderland, and are looking for an adopter to take care of them in the metaverse. <br/><br/>Remember they are still from a gang... be careful.
             </div>
-            <Countdown date={1632150000} renderer={renderer} />
+            <Countdown date={1632150000000}  renderer={renderer} />
             
           </div>
         </div>
@@ -199,6 +199,7 @@ export default function Home() {
           <img className={styles.arrow_rotate}  src='/weeb/Trazado 33.svg'/>
           <img  src='/banana.gif'/>
         </div>
+        <h1 style={{color:'#F4C474',fontSize:'1.2em',fontFamily:'Berlin Sans A'}}>Rarities will be revealed after soldout</h1>
         <div id='hero3' className={styles.hero3}>
           <div className={styles.hero3_item}  onClick={()=>{if(traits!=13){setTraits(13)}else{setTraits(0)}}}>
             Left Hand Object
@@ -1132,6 +1133,42 @@ export default function Home() {
                                 </div>
                           </div>:''}
           </div>
+        </div>
+        <div id='hero4' className={styles.hero4} style={{fontSize:'0.5em'}}>
+            <h1>Contract: 0x053281ce1da15023d19aacc843cec96b78e4d2ce</h1>
+        </div>
+        <div id='hero4' className={styles.hero4}>
+        <h1>Roadmap</h1>
+            <div>
+              <h3>25%</h3>
+              <p>We will airdrop 10 Cat NFTs to 10 random holders listed. The snapshot will be taking once we get to 25% minted, so if you sell your cat before you wont get a reward!</p>
+            </div>
+            <div>
+              <h3>50%</h3>
+              <p>We will donate 4eth of the earnings to a local Cat Shelter we already partnered with to take care of the abandoned and abused cats.</p>
+              <p>Airdrop 20 Cat NFTs to 10 random holders.</p>
+            </div>
+            <div>
+              <h3>75%</h3>
+              <p>Creation of CCG Token which will be rewarded to holders, and will let you exchange it for new gen2 CCGs and CCG t-shirts!</p>
+            </div>
+            <div>
+              <h3>100% </h3>
+              <p>Cute Cat Gang gen2 - Breeding system, with new cats, animations and much more!</p>
+              <p>A Big Surprise. Stay tuned!</p>
+            </div>
+        </div>
+        <div className={styles.gallery}>
+            <img src='/260.png'/>
+            <img src='/261.png'/>
+            <img src='/262.png'/>
+            <img src='/263.png'/>
+            <img src='/264.png'/>
+            <img src='/265.png'/>
+            <img src='/266.png'/>
+            <img src='/267.png'/>
+            <img src='/268.png'/>
+            <img src='/269.png'/>
         </div>
         <div id='hero4' className={styles.hero4}>
           <h1>Frequently Asked Questions</h1>
