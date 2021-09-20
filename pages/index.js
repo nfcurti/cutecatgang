@@ -173,7 +173,9 @@ export default function Home() {
         <ul className={styles.navul}>
           <li><a href='#hero1'>About</a></li>
           <li><a href='#hero3'>Rarity</a></li>
+          <li><a href='#roadmap'>Roadmap</a></li>
           <li><a href='#hero5'>FAQ</a></li>
+          <li><a href='#team'>Team</a></li>
         {
           userAddress == '' ?
           <li onClick={async () => {
@@ -1134,7 +1136,7 @@ export default function Home() {
         <div id='hero4' className={styles.hero4} style={{fontSize:'0.5em'}}>
             <h1>Contract: 0x053281ce1da15023d19aacc843cec96b78e4d2ce</h1>
         </div>
-        <div id='hero4' className={styles.hero4}>
+        <div id='roadmap' className={styles.hero4}>
         <h1>Roadmap</h1>
             <div>
               <h3>25%</h3>
@@ -1191,8 +1193,26 @@ export default function Home() {
             </div>
             <div>
               <h3>When you launch Breeding, will my cat lose exclusivity?</h3>
-              <p>No, after introducing the breeding system, you will have an even more exclusive cat, scince some of their features wont be available for Gen 2 of the Cats Gang.</p>
+              <p>No, after introducing the breeding system, you will have an even more exclusive cat, since some of their features wont be available for Gen 2 of the Cats Gang.</p>
             </div>
+        </div>
+        <h1 id='team' className={styles.teamtitle}>Team</h1>
+        <div id='hero6' className={styles.hero6}>
+          <div>
+            <img src='/268.png'/>
+            <p>@Nacho_Carrera</p>
+            <p>Designer</p>
+          </div>
+          <div>
+            <img src='/269.png'/>
+            <p>@CurtiNico</p>
+            <p>Developer</p>
+          </div>
+          <div>
+            <img src='/270.png'/>
+            <p>PandasYKiwis</p>
+            <p>Illustrator</p>
+          </div>
         </div>
         <div id='hero5' className={styles.hero5}>
           <a href='https://discord.gg/vn5wF4n5XX'><img  src='/weeb/Trazado 47.svg'/></a>

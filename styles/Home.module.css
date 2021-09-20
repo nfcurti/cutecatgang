@@ -315,7 +315,37 @@
   margin-left: 0.5rem;
 }
 
+.hero6{
+  display: flex;
+  flex-wrap: wrap;
+  width: 55em;
+  margin:auto;
+  text-align: center;
+  font-family: Natwood;
+    font-size: 18px;
+    font-weight: 600;
+    color: #F4C474
+}
+
+.hero6 div{
+  flex:1 0 29%;
+}
+
+.hero6 img{
+  width: 50%
+}
+
+.teamtitle{
+      font-family: Berlin Sans A;
+      color: #F4C474
+}
+
 @media (max-width: 600px) {
+  .hero6{
+    display: block;
+    width: auto
+  }
+
   .grid {
     width: 100%;
     flex-direction: column;
