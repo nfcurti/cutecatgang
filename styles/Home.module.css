@@ -126,10 +126,10 @@
   padding: 0.3em 1em;
 }
 
-.hero3_item img{
+.hero3_item span{
   width: 1em;
   float: right;
-  margin-top: 0.3em
+  margin-top: 0em
 }
 
 .hero3_extend{

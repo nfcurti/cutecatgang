@@ -201,10 +201,10 @@ export default function Home() {
         </div>
         <h1 style={{color:'#F4C474',fontSize:'1.2em',fontFamily:'Berlin Sans A'}}>Rarities will be revealed after soldout</h1>
         <div id='hero3' className={styles.hero3}>
-          <div className={styles.hero3_item}  onClick={()=>{if(traits!=13){setTraits(13)}else{setTraits(0)}}}>
+          <div className={styles.hero3_item}  onClick={()=>{if(traits!=13){setTraits(0)}else{setTraits(0)}}}>
             Left Hand Object
             <span>
-              <img src='/downarrow.svg'/>
+              8
             </span>
                         {traits==13 ? <div className={styles.hero3_extend}>
                             <div className={styles.traititem}>
@@ -242,7 +242,7 @@ export default function Home() {
                           </div>:''}
           </div>
 
-          <div className={styles.hero3_item}  onClick={()=>{if(traits!=12){setTraits(12)}else{setTraits(0)}}}>Body Colour<span><img src='/downarrow.svg'/></span>
+          <div className={styles.hero3_item}  onClick={()=>{if(traits!=12){setTraits(0)}else{setTraits(0)}}}>Body Colour<span>28</span>
             {traits==12 ? <div className={styles.hero3_extend}>
                             <div className={styles.traititem}>
                               <span>6.31%</span>
@@ -363,7 +363,7 @@ export default function Home() {
                           </div>:''}
           </div>
 
-          <div className={styles.hero3_item} onClick={()=>{if(traits!=1){setTraits(1)}else{setTraits(0)}}}>Shadows and Spots<span><img src='/downarrow.svg'/></span>
+          <div className={styles.hero3_item} onClick={()=>{if(traits!=1){setTraits(0)}else{setTraits(0)}}}>Shadows and Spots<span>36</span>
                     {traits==1 ? <div className={styles.hero3_extend}>
                             <div className={styles.traititem}>
                                   <span>2.66%</span>
@@ -512,7 +512,7 @@ export default function Home() {
 
                           </div>:''}
           </div>
-          <div className={styles.hero3_item} onClick={()=>{if(traits!=2){setTraits(2)}else{setTraits(0)}}}>Cheeks<span><img src='/downarrow.svg'/></span>
+          <div className={styles.hero3_item} onClick={()=>{if(traits!=2){setTraits(0)}else{setTraits(0)}}}>Cheeks<span>4</span>
               {traits==2 ? <div className={styles.hero3_extend}>
                 <div className={styles.traititem}>
                                   <span>25.12%</span>
@@ -532,7 +532,7 @@ export default function Home() {
                                 </div>
                           </div>:''}
           </div>
-          <div className={styles.hero3_item} onClick={()=>{if(traits!=3){setTraits(3)}else{setTraits(0)}}}>Right Hand Object<span><img src='/downarrow.svg'/></span>
+          <div className={styles.hero3_item} onClick={()=>{if(traits!=3){setTraits(0)}else{setTraits(0)}}}>Right Hand Object<span>16</span>
               {traits==3 ? <div className={styles.hero3_extend}>
                         <div className={styles.traititem}>
                                   <span>1.53%</span>
@@ -601,7 +601,7 @@ export default function Home() {
 
                           </div>:''}
           </div>
-          <div className={styles.hero3_item} onClick={()=>{if(traits!=4){setTraits(4)}else{setTraits(0)}}}>Hanging Hand Accessory<span><img src='/downarrow.svg'/></span>
+          <div className={styles.hero3_item} onClick={()=>{if(traits!=4){setTraits(0)}else{setTraits(0)}}}>Hanging Hand Accessory<span>6</span>
               {traits==4 ? <div className={styles.hero3_extend}>
                   <div className={styles.traititem}>
                                   <span>1.98%</span>
@@ -629,7 +629,7 @@ export default function Home() {
                                 </div>
                           </div>:''}
           </div>
-          <div className={styles.hero3_item} onClick={()=>{if(traits!=5){setTraits(5)}else{setTraits(0)}}}>Head Accessory<span><img src='/downarrow.svg'/></span>
+          <div className={styles.hero3_item} onClick={()=>{if(traits!=5){setTraits(0)}else{setTraits(0)}}}>Head Accessory<span>14</span>
                     {traits==5 ? <div className={styles.hero3_extend}>
                             
                                 <div className={styles.traititem}>
@@ -691,8 +691,7 @@ export default function Home() {
                             
                           </div>:''}
           </div>
-
-          <div className={styles.hero3_item} onClick={()=>{if(traits!=6){setTraits(6)}else{setTraits(0)}}}>Shirt<span><img src='/downarrow.svg'/></span>
+          <div className={styles.hero3_item} onClick={()=>{if(traits!=6){setTraits(0)}else{setTraits(0)}}}>Shirt<span>41</span>
               {traits==6 ? <div className={styles.hero3_extend}>
                                 <div className={styles.traititem}>
                                   <span>2.64%</span>
@@ -860,8 +859,7 @@ export default function Home() {
                                 </div>
                               </div>:''}
           </div>
-
-          <div className={styles.hero3_item} onClick={()=>{if(traits!=7){setTraits(7)}else{setTraits(0)}}}>Boots<span><img src='/downarrow.svg'/></span>                        {traits==7 ? <div className={styles.hero3_extend}>
+          <div className={styles.hero3_item} onClick={()=>{if(traits!=7){setTraits(0)}else{setTraits(0)}}}>Boots<span>13</span>                        {traits==7 ? <div className={styles.hero3_extend}>
                             <div className={styles.traititem}>
                               <span>8.19%</span>
                               <span>Baby Red</span>
@@ -915,8 +913,7 @@ export default function Home() {
                               <span>Yellow</span>
                             </div></div>:''}
           </div>
-
-          <div className={styles.hero3_item} onClick={()=>{if(traits!=8){setTraits(8)}else{setTraits(0)}}}>Eyes<span><img src='/downarrow.svg'/></span>{traits==8 ? <div className={styles.hero3_extend}>
+          <div className={styles.hero3_item} onClick={()=>{if(traits!=8){setTraits(0)}else{setTraits(0)}}}>Eyes<span>9</span>{traits==8 ? <div className={styles.hero3_extend}>
                             <div className={styles.traititem}>
                                 <span>11.00%</span>
                                 <span>Angry</span>
@@ -956,7 +953,7 @@ export default function Home() {
                             </div>:''}
           </div>
 
-          <div className={styles.hero3_item} onClick={()=>{if(traits!=9){setTraits(9)}else{setTraits(0)}}}>Mouth<span><img src='/downarrow.svg'/></span>{traits==9 ? <div className={styles.hero3_extend}>
+          <div className={styles.hero3_item} onClick={()=>{if(traits!=9){setTraits(0)}else{setTraits(0)}}}>Mouth<span>9</span>{traits==9 ? <div className={styles.hero3_extend}>
                             <div className={styles.traititem}>
                                 <span>10.55%</span>
                                 <span>Afraid</span>
@@ -996,7 +993,7 @@ export default function Home() {
                             </div>:''}
           </div>
 
-          <div className={styles.hero3_item} onClick={()=>{if(traits!=10){setTraits(10)}else{setTraits(0)}}}>Ultra Rare Accessory<span><img src='/downarrow.svg'/></span>
+          <div className={styles.hero3_item} onClick={()=>{if(traits!=10){setTraits(0)}else{setTraits(0)}}}>Ultra Rare Accessory<span>3</span>
                         {traits==10 ? <div className={styles.hero3_extend}>
                             <div className={styles.traititem}>
                               <span>1.18%</span>
@@ -1013,10 +1010,10 @@ export default function Home() {
                           </div>:''}
           </div>
 
-          <div className={styles.hero3_item} onClick={()=>{if(traits!=11){setTraits(11)}else{setTraits(0)}}}>
+          <div className={styles.hero3_item} onClick={()=>{if(traits!=11){setTraits(0)}else{setTraits(0)}}}>
             Background
             <span>
-              <img src='/downarrow.svg'/>
+              28
             </span>
             {traits==11 ? <div className={styles.hero3_extend}>
                             <div className={styles.traititem}>
@@ -1141,7 +1138,7 @@ export default function Home() {
         <h1>Roadmap</h1>
             <div>
               <h3>25%</h3>
-              <p>We will airdrop 10 Cat NFTs to 10 random holders listed. The snapshot will be taking once we get to 25% minted, so if you sell your cat before you wont get a reward!</p>
+              <p>We will airdrop 10 Cat NFTs to 10 random holders listed. The snapshot will be taking place once we get to 25% minted, so if you sell your cat before you wont get a reward!</p>
             </div>
             <div>
               <h3>50%</h3>
