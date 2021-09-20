@@ -140,19 +140,17 @@ export default function Home() {
 
       const _priceWei = await contract.methods.getCurrentPrice().call();
       
-      var block = await web3.eth.getBlock("latest");
-      var gasLimit = block.gasLimit/block.transactions.length;
-      const gasPrice = await contract.methods.mint(
-        mintValue
-      ).estimateGas({from: userAddress, value: (mintValue*_priceWei)});
+      // var block = await web3.eth.getBlock("latest");
+      // var gasLimit = block.gasLimit/block.transactions.length;
+      // const gasPrice = await contract.methods.mint(
+      //   mintValue
+      // ).estimateGas({from: userAddress, value: (mintValue*_priceWei)});
 
       await contract.methods.mint(
         mintValue
       ).send({
         from: userAddress,
-        value: (mintValue*_priceWei),
-        gas: gasPrice,
-        gasLimit: gasLimit
+        value: (mintValue*_priceWei)
       });
       alert('Minted successfuly!');
       setIsLoading(false);
